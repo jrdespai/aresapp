@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/jrdespai/aresapp.png?label=ready&title=Ready)](https://waffle.io/jrdespai/aresapp)
 # aresapp
 Sports App
 
