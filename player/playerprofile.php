@@ -17,11 +17,11 @@
 	//Connect to the DB
 	$conn	= mysqli_connect($hostName, $userName, $pass, $database) or die('Connection error! (LOCAL)');	
 	
-	$query = "SELECT * FROM team WHERE teamId = (SELECT teamId FROM teamplayer WHERE playerId = '" . $playerId . "')";
+	$query = "SELECT * FROM player WHERE playerId = '" . $playerId . "'";
 	
 	$result = mysqli_query($conn, $query);	
 	
-	$teamData = mysqli_fetch_array($result);
+	$playerData = mysqli_fetch_array($result);
 	
 	
 	//include('header.php');
@@ -52,81 +52,56 @@
   <body>
 	
 		<div class="container-fluid bg-warning">
-			<p>Team Name
-				<?php
-					echo '<p>' . $teamData['teamName'] . '</p>';
-				?>
-			</p>
-		</div>
+			<div class="row">
+				<div class="col-sm-5">
+					<p>Player Name: 
+						<?php
+							echo $playerData['playerName'];
+						?>
+						</p>
+				</div>
+			</div>
 
-		<div class="container">
-			<div class="col-10-sm">
-					<p>Soccer</p>
+		
+
+			<div class="row">
+				<div class="col-sm-5">
+						<p>City: 
+							<?php
+								echo $playerData['playerCity'];
+							?>
+						</p>
+				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-sm-5">
-						<p>Team Captain:</p>
-				</div>
-
-				<div class="col-sm-5">
-					<?php
-						echo '<p>' . $teamData['teamCaptain'] . '</p>';
-					?>
+						<p>State: 
+							<?php
+								echo $playerData['playerState'];
+							?>
+						</p>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-sm-5">
-						<p>Location:</p>
-				</div>
-
-				<div class="col-sm-5">
-					<?php
-						echo '<p>' . $teamData['teamCity'] . ', ' . $teamData['teamState'] .  '</p>';
-					?>
+						<p>Email: 
+							<?php
+								echo $playerData['playerEmail'];
+							?>
+						</p>
 				</div>
 			</div>
-		
-		<div class="container">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>Recent Games</th>
-						<th>Team Played</th>
-						<th>Win/Loss</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>3/15/15</td>
-						<td>Losers</td>
-						<td>win</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		
-		<div class="container">
-
+			
 			<div class="row">
-				
 				<div class="col-sm-5">
-						<p>Progress:</p>
+						<p>Phone: 
+							<?php
+								echo $playerData['playerPhone'];
+							?>
+						</p>
 				</div>
-
-				<div class="col-sm-5">
-						<p>50%</p>
-				</div>
-				
-				<div class="col-sm-5">
-						<p>Level:</p>
-				</div>
-
-				<div class="col-sm-5">
-						<p>150</p>
-				</div>
-				
 			</div>
 		</div>
 		

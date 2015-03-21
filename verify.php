@@ -30,19 +30,31 @@
 	$password = $_POST['password'];
 	
 	
-	$query = "SELECT * FROM player WHERE playerUserName = '" . $username . "'";
+	$query = "SELECT * FROM player WHERE playerUserName = '" . $username . "' AND playerPassword = '" . $password . "'";
 	
 	$result = mysqli_query($conn, $query);
 	
 	if(mysqli_num_rows($result) == 0){
 	
 		echo 'Incorrect Username or Password';
-		exit;
+		//exit;
 		
 	}
 	else{
 		echo 'Found a record';
 	}
+	
+	session_name("user");
+	session_start("user");
+	
+	
+	$id = mysqli_fetch_array($result);
+	
+	$_SESSION["playerId"] = $id['playerId'];
+	
+	echo $_SESSION["playerId"];
+	
+	header('Location: welcome.php');
 	
 	
 ?>

@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+
+
+<?php
+	include('header.php');
+?>
+
+  <body>
 <?php
 	echo'	<form role="form" action="verify.php" method="post">
 				<div class="form-group">
@@ -11,3 +19,5 @@
 				<button type="submit" class="btn btn-default">Login</button>
 			</form>'
 ?>
+</body>
+</html>
