@@ -31,7 +31,21 @@
 	
 	$result = mysqli_query($conn, $query);
 	
-	echo $result;
+	$query = "SELECT * FROM player WHERE playerUserName = '" . $username . "' AND playerPassword = '" . $password . "'";
+	
+	$result = mysqli_query($conn, $query);
+		
+	session_name("user");
+	session_start("user");
+	
+	
+	$id = mysqli_fetch_array($result);
+	
+	$_SESSION['playerId'] = $id['playerId']; 
+	
+	header('Location: congratulationsadduser.php');
+	
+	
 	
 	
 	

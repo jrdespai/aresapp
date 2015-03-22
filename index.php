@@ -9,7 +9,8 @@
   
 
 		<div class="container-fluid bg-warning">
-				<p>some text</p>
+				<a href="login.php">Sign in</a>
+				<a href="register.php">Register</a>
 		</div>
 
 
