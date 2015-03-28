@@ -24,11 +24,11 @@
 	$teamData = mysqli_fetch_array($result);
 	
 	
-	//include('header.php');
+	include('header.php');
 ?>
 
 
-		<html lang="en">
+		<!--<html lang="en">
 		 <head>
 			
 			<title>Ares App</title>
@@ -47,7 +47,7 @@
 			<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		
 
-		 </head>
+		 </head>-->
 
   <body>
 	

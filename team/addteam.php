@@ -24,16 +24,29 @@
 	$name = $_POST['name'];
 	$sport = $_POST['sport'];
 	
-	$query = "INSERT INTO team(teamName) VALUES ('" . $name . "')";
+	$userQuery = "SELECT playerUserName FROM player WHERE playerId = '" . $_SESSION['playerId'] . "'";
+	
+	$captainResult = mysqli_query($conn, $userQuery);
+	
+	$captainArray = mysqli_fetch_array($captainResult);
+	
+	$captain = $captainArray['playerUserName'];
+	
+	echo $captain;
+	
+	$query = "INSERT INTO team(teamName, teamCaptain) VALUES ('" . $name . "', '" . $captain . "')";
 	
 	$result = mysqli_query($conn, $query);
 	
-	$query = "INSERT INTO teamplayer(teamId, playerId) VALUES ('" . $name . "', '" . $_SESSION['playerId'] . ")";
+	
+	$query = "INSERT INTO teamplayer(teamId, playerId) VALUES ('" . mysqli_insert_id($conn) . "', '" . $_SESSION['playerId'] . "')";
 	
 	$result = mysqli_query($conn, $query);
 	
 	
-	//header('Location: congratulationsadduser.php');
+	echo $captain;
+	
+	header('Location: ../welcome.php');
 	
 	
 	

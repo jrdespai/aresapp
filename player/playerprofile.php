@@ -24,10 +24,10 @@
 	$playerData = mysqli_fetch_array($result);
 	
 	
-	//include('header.php');
+	include('header.php');
 ?>
 
-
+<!--
 		<html lang="en">
 		 <head>
 			
@@ -48,7 +48,7 @@
 		
 
 		 </head>
-
+-->
   <body>
 	
 		<div class="container-fluid bg-warning">
