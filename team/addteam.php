@@ -10,15 +10,8 @@
   <body>
   
 <?php
-	//local-connect.php
-	
-	$hostName 	= 'localhost';
-	$userName	= 'root';
-	$pass		= '';
-	$database	= 'aresapp';
-	
-	//Connect to the DB
-	$conn	= mysqli_connect($hostName, $userName, $pass, $database) or die('Connection error! (LOCAL)');
+		//server connect
+		include('../connect.php');
 	
 	
 	$name = $_POST['name'];

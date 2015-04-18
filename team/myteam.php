@@ -7,15 +7,9 @@
 
 	$playerId = $_SESSION["playerId"];
 
-	//local-connect.php
-	
-	$hostName 	= 'localhost';
-	$userName	= 'root';
-	$pass		= '';
-	$database	= 'aresapp';
-	
-	//Connect to the DB
-	$conn	= mysqli_connect($hostName, $userName, $pass, $database) or die('Connection error! (LOCAL)');	
+	//server connect 
+	include('../connect.php');
+		
 	
 	$query = "SELECT * FROM team WHERE teamId = (SELECT teamId FROM teamplayer WHERE playerId = '" . $playerId . "')";
 	
@@ -52,41 +46,36 @@
   <body>
 	
 		<div class="container-fluid bg-warning">
-			<p>Team Name
+			<p><h1>
 				<?php
 					echo '<p>' . $teamData['teamName'] . '</p>';
 				?>
-			</p>
+			</h1></p>
 		</div>
+		
+		
 
 		<div class="container">
-			<div class="col-10-sm">
+			<div class="h2">
+			<?php
+				echo '<p>' . $teamData['teamCity'] . ', ' . $teamData['teamState'] .  '</p>';
+			?>
+			</div>
+		</div>
+		
+
+		<div class="container">
+			<div class="h3">
 					<p>Soccer</p>
 			</div>
 
-			<div class="row">
-				<div class="col-sm-5">
-						<p>Team Captain:</p>
-				</div>
-
-				<div class="col-sm-5">
+				<div class="h4">
 					<?php
 						echo '<p>' . $teamData['teamCaptain'] . '</p>';
 					?>
-				</div>
+				<div>
 			</div>
 			
-			<div class="row">
-				<div class="col-sm-5">
-						<p>Location:</p>
-				</div>
-
-				<div class="col-sm-5">
-					<?php
-						echo '<p>' . $teamData['teamCity'] . ', ' . $teamData['teamState'] .  '</p>';
-					?>
-				</div>
-			</div>
 		
 		<div class="container">
 			<table class="table">
