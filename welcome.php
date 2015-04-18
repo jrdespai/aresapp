@@ -9,7 +9,7 @@
 
 	//local-connect.php
 	
-	$hostName 	= 'localhost';
+	$hostName 	= 'localhost:3307';
 	$userName	= 'root';
 	$pass		= '';
 	$database	= 'aresapp';

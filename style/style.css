@@ -1,5 +1,9 @@
 body { padding-top: 70px; }
 
+.grey{
+	color: rgb(209,209,209);	
+}
+
 .navbar .navbar-default .navbar-fixed-top {
     color: orange;
 }

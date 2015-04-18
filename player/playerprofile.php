@@ -11,7 +11,7 @@
 	
 	$hostName 	= 'localhost';
 	$userName	= 'root';
-	$pass		= '';
+	$pass		= '502NFalcon';
 	$database	= 'aresapp';
 	
 	//Connect to the DB

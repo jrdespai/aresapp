@@ -1,7 +1,7 @@
 <?php
 	echo '
 
-			<nav class="navbar navbar-default navbar-fixed-top">
+			<nav class="navbar navbar-default navbar-fixed-top grey">
 				<div class="container-fluid">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
