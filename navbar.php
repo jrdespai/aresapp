@@ -9,7 +9,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="welcome.php" />BlueChip</a>
+							<a class="navbar-brand" href="index.php" /><img src="images/BlueChipLogo.png" height="35" width = "100" /></a>
 						</div>
 						<div>
 							<ul class="nav navbar-nav" id="mainNav">

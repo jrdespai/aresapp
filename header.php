@@ -3,10 +3,12 @@
 		<html lang="en">
 		 <head>
 			
-			<title>Ares App</title>
+			<title>Blue Chip</title>
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 			
+			<!-- Favicon Link -->
+			<link rel="icon" href="images/favicon-bluechip.png">
 		
 			<!-- Latest compiled and minified CSS -->
 			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
