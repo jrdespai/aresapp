@@ -2,11 +2,11 @@
 	
 	session_name("user");
 	session_start("user");
-	
+	/*
 	if (!isset($_SESSION['playerId'])){
-		header('Location: index.php');
+		//header('Location: index.php');
 		exit;
-	}
+	}*/
 	
 	echo '
 		<html lang="en">
