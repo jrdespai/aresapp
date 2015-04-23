@@ -20,27 +20,29 @@
 	include('encrypt.php');
 	
 	
-	$username = $_POST['username'];
-	$password = $_POST['password'];
+	$dusername = $_POST['username'];
+	$username = mysqli_real_escape_string($conn, $dusername);
 	
+	$dpassword = $_POST['password'];
+	$password = mysqli_real_escape_string($conn, $dpassword);
 	
-	$query = "SELECT * FROM player WHERE playerUserName = '" . $username . "' AND playerPassword = '" . $password . "'";
+	$query = "SELECT * FROM player WHERE playerUserName = '" . $username . "'";
 	
 	$result = mysqli_query($conn, $query);
 	$info = mysqli_fetch_array($result);
 	
-	if(mysqli_num_rows($result) == 0){
+	
+	$blnPassword = validate_password($password, $info['playerPassword']);
+	
+	if(mysqli_num_rows($result) == 0 || $blnPassword == false){
 	
 		echo 'Incorrect Username or Password';
-		//exit;
+		exit;
 		
 	}
 	else{
 		echo 'Found a record';
 	}	
-	
-	$blnPassword = validate_password($password, $info['playerPassword']);
-	
 
 	
 	session_name("user");
