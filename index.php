@@ -2,6 +2,15 @@
 
 
 <?php
+	
+	session_name("user");
+	session_start("user");
+	
+	if(isset($_SESSION['playerId'])){
+		header('Location: welcome.php');
+		exit;
+	}
+	
 	include('header.php');
 ?>
 
