@@ -12,25 +12,25 @@
 	
 	
 	$dname = $_POST['name'];
-	$name = mysqli_real_escape_string($dbc,$dname)
+	$name = mysqli_real_escape_string($dbc,$dname);
 	
 	$demail = $_POST['email'];
-	$email = mysqli_real_escape_string($dbc,$demail)
+	$email = mysqli_real_escape_string($dbc,$demail);
 	
 	$dusername = $_POST['username'];
-	$username = mysqli_real_escape_string($dbc,$dusername)
+	$username = mysqli_real_escape_string($dbc,$dusername);
 	
 	$dpassword = create_hash($_POST['password']);
-	$password = mysqli_real_escape_string($dbc,$dpassword)
+	$password = mysqli_real_escape_string($dbc,$dpassword);
 	
 	$dcity = $_POST['city'];
-	$city = mysqli_real_escape_string($dbc,$dcity)
+	$city = mysqli_real_escape_string($dbc,$dcity);
 	
 	$dstate = $_POST['state'];
-	$state = mysqli_real_escape_string($dbc,$dstate)
+	$state = mysqli_real_escape_string($dbc,$dstate);
 	
 	$dphone = $_POST['phone'];
-	$phone = mysqli_real_escape_string($dbc,$dphone)
+	$phone = mysqli_real_escape_string($dbc,$dphone);
 	
 	$query = "INSERT INTO player(playerName,playerEmail,playerUserName, playerPassword, playerCity, playerState, playerPhone) VALUES ('" . $name . "', '" . $email . "', '" . $username . "','" . $password . "', '" . $city . "','" . $state . "','" .$phone . "')";
 	
