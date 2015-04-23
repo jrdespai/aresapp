@@ -39,7 +39,7 @@
 		echo 'Found a record';
 	}	
 	
-	$blnPassword = validate_password($password, $info['playerPassword'])
+	$blnPassword = validate_password($password, $info['playerPassword']);
 	
 
 	
