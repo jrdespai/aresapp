@@ -36,7 +36,7 @@
 	$phone = mysqli_real_escape_string($conn,$dphone);
 	
 	//Verify two passwords
-	if ($password == $cpassword)
+	if ($beforepassword == $cpassword)
 	{
 		$password = create_hash($beforepassword);
 	}
