@@ -21,7 +21,7 @@
 	$username = mysqli_real_escape_string($conn,$dusername);
 	
 	$dbeforepassword = $_POST['password'];
-	$beforepassword = mysqli_real_escape_string($conn,$dpassword);
+	$beforepassword = mysqli_real_escape_string($conn,$dbeforepassword);
 	
 	$dcpassword = $_POST['confirmpassword'];
 	$cpassword = mysqli_real_escape_string($conn,$dcpassword);
