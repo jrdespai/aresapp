@@ -2,7 +2,7 @@
 
 
 <?php
-	
+	/*
 	session_name("user");
 	session_start("user");
 	
@@ -10,7 +10,7 @@
 		header('Location: welcome.php');
 		exit;
 	}
-	
+	*/
 	include('header.php');
 ?>
 
