@@ -17,7 +17,7 @@
 <?php
 
 	include('connect.php');
-
+	include('encrypt.php');
 	
 	
 	$username = $_POST['username'];
@@ -27,6 +27,7 @@
 	$query = "SELECT * FROM player WHERE playerUserName = '" . $username . "' AND playerPassword = '" . $password . "'";
 	
 	$result = mysqli_query($conn, $query);
+	$info = mysqli_fetch_array($result);
 	
 	if(mysqli_num_rows($result) == 0){
 	
@@ -36,15 +37,19 @@
 	}
 	else{
 		echo 'Found a record';
-	}
+	}	
+	
+	$blnPassword = validate_password($password, $info['playerPassword'])
+	
+
 	
 	session_name("user");
 	session_start("user");
 	
 	
-	$id = mysqli_fetch_array($result);
 	
-	$_SESSION["playerId"] = $id['playerId'];
+	
+	$_SESSION["playerId"] = $info['playerId'];
 	
 	echo $_SESSION["playerId"];
 	
