@@ -2,7 +2,12 @@
 
 
 <?php
+	//Check to make sure that the user isn't already logged in
+	include('validate_logged_in.php');
+	
+	//Include the HTML header and navbar
 	include('header.php');
+	include('navbar.php');
 ?>
 
   <body>

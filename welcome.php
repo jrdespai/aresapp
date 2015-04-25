@@ -2,8 +2,9 @@
 
 
 <?php
-	session_name("user");
-	session_start("user");
+	
+	//Ensure that the user is logged
+	include('validate_session.php');
 
 	$playerId = $_SESSION["playerId"];
 
@@ -15,7 +16,10 @@
 	$result = mysqli_query($conn, $query);	
 	
 	$playerData = mysqli_fetch_array($result);
+	
+	//Include the HTML header and navbar
 	include('header.php');
+	include('navbar.php');
 
 ?>
 

@@ -4,7 +4,9 @@
 <?php
 	session_name("user");
 	session_start("user");
-	include('../header.php');
+	
+//I don't think this line is necessary - JRD 4/24/15
+	//include('../header.php');
 ?>
 
   <body>

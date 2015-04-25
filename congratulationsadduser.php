@@ -2,8 +2,9 @@
 
 
 <?php
-	session_name("user");
-	session_start("user");
+	
+	//Validate that user session is active and join
+	include('validate_session.php');
 
 	$playerId = $_SESSION["playerId"];
 
@@ -15,6 +16,7 @@
 	
 	$playerData = mysqli_fetch_array($result);
 	include('header.php');
+	include('navbar.php');
 ?>
 
   <body>

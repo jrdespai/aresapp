@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-
-
 <?php
-	include('header.php');
-?>
 
-  <body>
-  
-<?php
+//I don't think you need an HTML header here - JRD 4/24/15
+	//include('header.php');
 	include('connect.php');
 	include('encrypt.php');
 	
@@ -57,18 +51,10 @@
 	session_name("user");
 	session_start("user");
 	
-	
 	$id = mysqli_fetch_array($result);
 	
 	$_SESSION['playerId'] = $id['playerId']; 
 	
 	header('Location: congratulationsadduser.php');
 	
-	
-	
-	
-	
 ?>
-</body>
-
-</html>

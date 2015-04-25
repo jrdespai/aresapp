@@ -2,8 +2,9 @@
 
 
 <?php
-	session_name("user");
-	session_start("user");
+	
+	//Validate that the user session is active and access it
+	include('../validate_session_sub.php');
 
 	$playerId = $_SESSION["playerId"];
 
@@ -17,8 +18,9 @@
 	
 	$teamData = mysqli_fetch_array($result);
 	
-	
-	include('header.php');
+	//Include the HTML header and navbar
+	include('../header_sub.php');
+	include('../navbar_sub.php');
 ?>
 
 

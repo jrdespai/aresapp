@@ -1,12 +1,6 @@
 <?php
 	
-	session_name("user");
-	session_start("user");
-	/*
-	if (!isset($_SESSION['playerId'])){
-		//header('Location: index.php');
-		exit;
-	}*/
+	//HTML header for all HTML pages displayed to user
 	
 	echo '
 		<html lang="en">
@@ -31,7 +25,5 @@
 		
 			<!--<link rel="icon" href="images/logo.png" />-->
 		 </head>';
-		 
-		 include ('navbar.php');
 	
 ?>

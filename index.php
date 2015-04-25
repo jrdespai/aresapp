@@ -2,16 +2,10 @@
 
 
 <?php
-	/*
-	session_name("user");
-	session_start("user");
-	
-	if(isset($_SESSION['playerId'])){
-		header('Location: welcome.php');
-		exit;
-	}
-	*/
+	//Check to make sure that the user isn't already logged in
+	include('validate_logged_in.php');
 	include('header.php');
+	include('navbar.php');
 ?>
 
   <body>
