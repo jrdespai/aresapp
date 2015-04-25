@@ -7,17 +7,18 @@
 	include('../connect.php');
 	include('../header_sub.php');
 	include('../navbar_sub.php');
-
 ?>
-	<form role="form" method="post" action="adduserteam.php">
+	<form role="form" method="post" action="teamprofile.php">
 		<div class="form-group">
-			<label for="teams">Teams:</label>
+			<label for="teams">My Teams:</label>
 			<select class="form-control" id="teams" name="team" size="5">
 <?php
-
+		
 		//Populate Teams Select Box
 		
-		$query = "SELECT teamId, teamName FROM team;";
+		$playerId = $_SESSION["playerId"];
+		
+		$query = "SELECT teamId, teamName FROM team WHERE teamId = ANY (SELECT teamId FROM teamplayer WHERE playerId = '" . $playerId . "');";
 		
 		$result = mysqli_query($conn, $query);
 		
@@ -27,7 +28,7 @@
 		}
 ?>
 			</select>
-			<button type="submit" class="btn">Request to Join</button>
+			<button type="submit" class="btn">View Team Page</button>
 		</div>
 	</form>
 

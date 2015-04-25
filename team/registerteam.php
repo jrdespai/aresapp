@@ -28,7 +28,17 @@ echo '<form role="form" action="addteam.php" method="post">
 		<div class="form-group">
 			<label for="sport">Sport:</label>
 			<input type="text" class="form-control" id="sport" name="sport" required>
-		</div>		
+		</div>
+
+		<div class="form-group">
+			<label for="city">City:</label>
+			<input type="text" class="form-control" id="city" name="city" required>
+		</div>	
+		
+		<div class="form-group">
+			<label for="state">State:</label>
+			<input type="text" class="form-control" id="state" name="state" required>
+		</div>	
 		
 		<button type="submit" class="btn btn-default">Register</button>
 	   </form>'

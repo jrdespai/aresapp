@@ -59,7 +59,7 @@
 					echo '<p>Welcome back ' . $playerData['playerName'] . '</p>';
 				?>
 				<a href="player/playerprofile.php">My Profile</a>
-				<a href="team/myteam.php">My Team</a>
+				<a href="team/myteams.php">My Teams</a>
 		</div>
 
 

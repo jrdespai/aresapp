@@ -18,6 +18,8 @@
 	
 	$name = $_POST['name'];
 	$sport = $_POST['sport'];
+	$city = $_POST['city'];
+	$state = $_POST['state'];
 	
 	$userQuery = "SELECT playerUserName FROM player WHERE playerId = '" . $_SESSION['playerId'] . "'";
 	
@@ -29,7 +31,7 @@
 	
 	echo $captain;
 	
-	$query = "INSERT INTO team(teamName, teamCaptain) VALUES ('" . $name . "', '" . $captain . "')";
+	$query = "INSERT INTO team(teamName, teamCaptain,  teamSport, teamCity, teamState) VALUES ('" . $name . "', '" . $captain . "', '" . $sport . "', '" . $city . "', '" . $state . "')";
 	
 	$result = mysqli_query($conn, $query);
 	

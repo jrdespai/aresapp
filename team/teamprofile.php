@@ -3,24 +3,22 @@
 
 <?php
 	
-	//Validate that the user session is active and access it
+	//Verify session, get DB info, add HTML page header, and add navbar
 	include('../validate_session_sub.php');
+	include('../connect.php');
+	include('../header_sub.php');
+	include('../navbar_sub.php');
 
 	$playerId = $_SESSION["playerId"];
-
-	//server connect 
-	include('../connect.php');
-		
 	
-	$query = "SELECT * FROM team WHERE teamId = (SELECT teamId FROM teamplayer WHERE playerId = '" . $playerId . "')";
+	$_SESSION['teamId'] = $_POST['team'];
+
+	$query = "SELECT * FROM team WHERE teamId = '" . $_POST['team'] . "';";
 	
 	$result = mysqli_query($conn, $query);	
 	
 	$teamData = mysqli_fetch_array($result);
 	
-	//Include the HTML header and navbar
-	include('../header_sub.php');
-	include('../navbar_sub.php');
 ?>
 
 
@@ -55,7 +53,9 @@
 			</h1></p>
 		</div>
 		
-		
+		<div class="container-fluid bg-warning">
+				<a href="removeuserteam.php">Leave Team</a>
+		</div>
 
 		<div class="container">
 			<div class="h2">

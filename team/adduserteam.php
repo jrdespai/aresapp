@@ -8,5 +8,5 @@
 	mysqli_query($conn, $query);
 	
 //Here we need to set the teamId variable in a session variable.  This needs to be done upon login as well
-	header('Location: myteam.php');
+	header('Location: myteams.php');
 ?>
