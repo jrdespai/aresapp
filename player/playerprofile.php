@@ -75,6 +75,8 @@
 			</div>
 		</div>
 		
+		<button class="btn"><a href="../team/findteam.php">Join a Team</a></button>
+		
   </body>
   
 </html>
