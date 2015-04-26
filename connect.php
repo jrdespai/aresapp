@@ -1,5 +1,5 @@
 <?php
-	$hostName 	= 'bluechip.cquy7bbypghg.us-west-2.rds.amazonaws.com:3306 ';
+	$hostName 	= 'bluechip.cquy7bbypghg.us-west-2.rds.amazonaws.com:3306';
 	$userName	= 'bluechipmaster';
 	$pass		= 'bluechip';
 	$database	= 'bluechip';
