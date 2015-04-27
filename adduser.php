@@ -55,6 +55,9 @@
 	
 	$_SESSION['playerId'] = $id['playerId']; 
 	
+	//Close DB connection
+	mysqli_close($conn);
+	
 	header('Location: congratulationsadduser.php');
 	
 ?>

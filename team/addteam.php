@@ -43,6 +43,9 @@
 	
 	echo $captain;
 	
+	//Close DB connection
+	mysqli_close($conn);
+	
 	header('Location: ../welcome.php');
 	
 	

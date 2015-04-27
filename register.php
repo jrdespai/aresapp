@@ -62,7 +62,7 @@ echo '<form role="form" action="adduser.php" method="post">
 		</div>
 		
 		
-		<button type="submit" class="btn btn-default">Login</button>
+		<button type="submit" class="btn btn-default">Register</button>
 	   </form>'
 ?>
 

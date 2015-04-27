@@ -18,7 +18,7 @@
 		
 		$playerId = $_SESSION["playerId"];
 		
-		$query = "SELECT teamId, teamName FROM team WHERE teamId = ANY (SELECT teamId FROM teamplayer WHERE playerId = '" . $playerId . "');";
+		$query = "SELECT teamId, teamName FROM team WHERE teamId IN (SELECT teamId FROM teamplayer WHERE playerId = '" . $playerId . "');";
 		
 		$result = mysqli_query($conn, $query);
 		
@@ -26,6 +26,9 @@
 		{
 			echo "<option value={$row['teamId']}>{$row['teamName']}</option>";
 		}
+		
+		//Close DB connection
+		mysqli_close($conn);
 ?>
 			</select>
 			<button type="submit" class="btn">View Team Page</button>

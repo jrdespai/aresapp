@@ -7,6 +7,9 @@
 	$query = 'INSERT INTO teamplayer (teamId, playerId) VALUES(' . $_POST['team'] . ', ' . $_SESSION['playerId'] . ')';
 	mysqli_query($conn, $query);
 	
+	//Close DB connection
+	mysqli_close($conn);
+	
 //Here we need to set the teamId variable in a session variable.  This needs to be done upon login as well
 	header('Location: myteams.php');
 ?>

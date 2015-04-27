@@ -17,7 +17,7 @@
 
 		//Populate Teams Select Box
 		
-		$query = "SELECT teamId, teamName FROM team;";
+		$query = "SELECT teamId, teamName FROM team WHERE teamId NOT IN (SELECT teamId FROM teamplayer WHERE playerId = '{$_SESSION['playerId']}');";
 		
 		$result = mysqli_query($conn, $query);
 		
@@ -25,6 +25,9 @@
 		{
 			echo "<option value={$row['teamId']}>{$row['teamName']}</option>";
 		}
+		
+		//Close DB connection
+		mysqli_close($conn);
 ?>
 			</select>
 			<button type="submit" class="btn">Request to Join</button>

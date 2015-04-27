@@ -15,6 +15,10 @@
 	$result = mysqli_query($conn, $query);	
 	
 	$playerData = mysqli_fetch_array($result);
+	
+	//Close DB connection
+	mysqli_close($conn);
+	
 	include('header.php');
 	include('navbar.php');
 ?>

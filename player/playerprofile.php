@@ -15,6 +15,9 @@
 	
 	$playerData = mysqli_fetch_array($result);
 	
+	//Close DB connection
+	mysqli_close($conn);
+	
 	//Include the HTML header and navbar
 	include('../header_sub.php');
 	include('../navbar_sub.php');

@@ -29,6 +29,9 @@
 	}	
 
 	
+	//Close DB connection
+	mysqli_close($conn);
+	
 	session_name("user");
 	session_start("user");
 	
