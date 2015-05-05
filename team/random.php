@@ -4,15 +4,26 @@
 	include('../validate_session_sub.php');
 	include('../connect.php');
 
-	//Get all records from the gameQueue
-	query = "SELECT * FROM gameQueue ORDER BY RAND()";
-	result = mysqli_query($conn, $query);
-	numTeams = mysqli_num_rows($result);
+	//Randomly select 1 record from the gameQueue table
+	$query = "SELECT * FROM (SELECT * FROM gameQueue ORDER BY RAND()) AS Results LIMIT 1";
+	$sqlResult = mysqli_query($conn, $query);
 	
-	randTeam = rand(numTeams);
+	//Make sure that there is a record in the result
+	$numTeams = mysqli_num_rows($sqlResult);
+	if ($numTeams == 0){
+		//Add the current user to the waiting queue and direct them to the waiting confirmation page
+		$query = "INSERT INTO gameQueue (teamID) VALUES ('" . $_SESSION['teamId'] . "');";
+		$sqlResult = mysqli_query($conn, $query);
+		header('Location: waiting.php');
+		exit;
+	}
 	
-	echo randTeam;
+	$result = mysqli_fetch_array($sqlResult);
 	
+	//Display the randomly selected team
+	header('Location: confirmgame.php?tid=' . $result['teamID']);
+	
+	//Close the DB connection
 	mysqli_close($conn);
 	
 ?>
