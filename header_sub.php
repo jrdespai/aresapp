@@ -20,6 +20,9 @@
 			<!-- jQuery library -->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
+			<!-- Include the Ajax File -->
+			<script src="jscript/ajax.js"></script>
+			
 			<!-- Latest compiled JavaScript -->
 			<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		
