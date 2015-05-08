@@ -11,6 +11,8 @@
 ?>
 <body>
 
+	<div class="container">
+
 	<form role="form" action="adduser.php" method="post">
 			
 			<div class="form-group">
@@ -26,7 +28,7 @@
 			
 			<div class="form-group">
 				<label for="username">Username:</label>
-				<input id="usernamebox" type="text" class="form-control" id="username" name="username" onblur="checkUser(this.value)" required>
+				<input id="usernamebox" type="text" class="form-control" id="username" name="username" onblur="checkUser(this.value)" required autocomplete="off">
 				<div id="checkUser"></div>
 			</div>
 			
@@ -59,6 +61,8 @@
 			<button type="submit" class="btn btn-default">Register</button>
 		   </form>
 
+		   </div>
+		   
   </body>
   
 </html>

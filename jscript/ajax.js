@@ -22,12 +22,12 @@ function checkUser(text){
 			var responseCode = request.responseText;
 			
 			if (responseCode != 0){
-				document.getElementById("checkUser").innerHTML = "Username Taken!";
+				document.getElementById("checkUser").innerHTML = "<p id=\"usernameMessageNegative\"><span class=\"glyphicon glyphicon-remove\" /> Username Taken</p>";
 				alert('Username already taken!  Please select a different username');
 				document.getElementById("usernamebox").focus();
 			}
 			else{
-				document.getElementById("checkUser").innerHTML = "Username available";
+				document.getElementById("checkUser").innerHTML = "<p id=\"usernameMessagePositive\"><span class=\"glyphicon glyphicon-ok\" /> Username Available</p>";
 			}
 			
 			
