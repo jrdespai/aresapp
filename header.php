@@ -22,6 +22,9 @@
 				
 			<!-- Include the Ajax File -->
 			<script src="jscript/ajax.js"></script>
+			
+			<!-- Javascript file -->
+			<script src="jscript/script.js"></script>
 
 			<!-- Latest compiled JavaScript -->
 			<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>

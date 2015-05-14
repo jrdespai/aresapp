@@ -8,7 +8,14 @@
 	include('../header_sub.php');
 	include('../navbar_sub.php');
 	
-	//Randomly select 1 record from the gameQueue table
+	//Add teams to confirmQueue
+	$query = "INSERT INTO confirmQueue (team1, team2, time, location) VALUES ('" . $_GET['tid'] . "', " . $_SESSION['teamId'] . ", '" . $_POST['time'] . "', '" . $_POST['location'] . "');";
+	$sqlResult = mysqli_query($conn, $query);
+
+	//Send an update Email
+	
+	
+	//Delete the team to be played from the gameQueue table
 	$query = "DELETE FROM gameQueue WHERE teamID = '" . $_GET['tid'] . "';";
 	$sqlResult = mysqli_query($conn, $query);
 		
@@ -17,7 +24,7 @@
 ?>
 	
 	<body>
-		<p>You have been scheduled to play Team #: 
+		<p>Your request has been sent to play Team #: 
 			<?php
 				echo $_GET['tid'];
 			?>

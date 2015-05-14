@@ -3,7 +3,10 @@
 	//Connect to DB and session
 	include('../validate_session_sub.php');
 	include('../connect.php');
+	include('../functions/functions.php');
 
+	checkTeam($_SESSION['teamId'], $conn);
+	
 	//Randomly select 1 record from the gameQueue table
 	$query = "SELECT * FROM (SELECT * FROM gameQueue ORDER BY RAND()) AS Results LIMIT 1";
 	$sqlResult = mysqli_query($conn, $query);
@@ -20,6 +23,13 @@
 	
 	$result = mysqli_fetch_array($sqlResult);
 	
+	
+	/*//Loop until we get a random team
+	do{
+		$randomResult = getRandomTeam($conn);
+		$team = $randomResult['teamID'];
+	} while ($team == $_SESSION['teamId'])
+	*/
 	//Display the randomly selected team
 	header('Location: confirmgame.php?tid=' . $result['teamID']);
 	

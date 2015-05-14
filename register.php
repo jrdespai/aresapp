@@ -34,12 +34,12 @@
 			
 			<div class="form-group">
 				<label for="password">Password:</label>
-				<input type="password" class="form-control" id="password" name="password" required>
+				<input type="password" class="form-control" id="password" name="password" onblur="checkPassword()" required>
 			</div>
 			
 			<div class="form-group">
 				<label for="confirmpassword">Confirm Password:</label>
-				<input type="password" class="form-control" id="confirmpassword" name="confirmpassword" required>
+				<input type="password" class="form-control" id="confirmpassword" name="confirmpassword" onblur="checkPassword()" required>
 			</div>
 			
 			<div class="form-group">

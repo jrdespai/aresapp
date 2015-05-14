@@ -8,6 +8,7 @@
 	include('../connect.php');
 	include('../header_sub.php');
 	include('../navbar_sub.php');
+	include('../functions/functions.php');
 
 	$playerId = $_SESSION["playerId"];
 	
@@ -19,8 +20,7 @@
 	
 	$teamData = mysqli_fetch_array($result);
 	
-	//Close DB connection
-	mysqli_close($conn);
+	
 	
 ?>
 
@@ -39,6 +39,18 @@
 				<button class="btn"><a href="random.php">Schedule Random Game</a></button>
 		</div>
 
+		<div class="container border-box">
+			Pending Requests:
+			<div class="row-fluid">
+				<div class="span4 offset2 bg-danger">
+					<?php
+						//Get and display all messages
+						displayMessages(getMessages($_SESSION['teamId'], $conn), $conn);
+					?>
+				</div>
+			</div>
+		</div>
+		
 		<div class="container">
 			<div class="h2">
 			<?php
@@ -104,5 +116,10 @@
 		</div>
 		
   </body>
+  
+  <?php
+	//Close DB connection
+	mysqli_close($conn);
+  ?>
   
 </html>
