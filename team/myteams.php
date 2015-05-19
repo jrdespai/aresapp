@@ -32,6 +32,7 @@
 ?>
 			</select>
 			<button type="submit" class="btn">View Team Page</button>
+			<a href="findteam.php"><button type="button" class="btn">Join a Team</button></a>
 		</div>
 	</form>
 
