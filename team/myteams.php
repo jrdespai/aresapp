@@ -22,9 +22,17 @@
 		
 		$result = mysqli_query($conn, $query);
 		
+		$selected = true;
+		
 		while($row = $result->fetch_array())
 		{
-			echo "<option value={$row['teamId']}>{$row['teamName']}</option>";
+			if ($selected){
+				echo "<option " . "selected=\"selected\"" . " value={$row['teamId']}>{$row['teamName']}</option>"; 
+				$selected = false;
+			}
+			else{
+				echo "<option value={$row['teamId']}>{$row['teamName']}</option>";
+			}
 		}
 		
 		//Close DB connection
