@@ -35,7 +35,7 @@
 		</div>
 		
 		<div class="container-fluid bg-warning">
-				<button class="btn"><a href="removeuserteam.php">Leave Team</a></button>
+				<button class="btn"><a href="confirmleave.php?tid=<?php echo $teamData['teamName']; ?>">Leave Team</a></button>
 				<button class="btn"><a href="random.php">Schedule Random Game</a></button>
 		</div>
 
