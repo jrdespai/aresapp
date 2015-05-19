@@ -1,9 +1,28 @@
-body { padding-top: 70px; }
-
+body {
+	padding-top: 			70px; 
+	
+}
+#image {
+	width:					400px;
+	height:					200px;
+}
 #usernameMessagePositive{
 	color:	green;
 }
 
 #usernameMessageNegative{
 	color:	red;
+}
+#bcnavigation{
+		background-color: darkblue;
+		color:			white;
+			}
+
+#white{
+	color:		white;
+	font-family:	Georgia;
+}
+
+#bclogo{
+	padding-bottom:	15px;
 }

@@ -9,13 +9,10 @@
 ?>
 
   <body>
-  
-
-		<div class="container-fluid">
+        <div class="container-fluid">
 				<button class="btn"><a href="login.php">Sign in</a></button>
 				<button class="btn"><a href="register.php">Register</a></button>
 		</div>
-
 
   
   </body>
