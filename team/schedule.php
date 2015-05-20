@@ -18,6 +18,7 @@
 			<?php
 				$game = scheduleGame($_GET['t1'], $_GET['t2'], $conn);
 				if($game){
+					$result = runQuery("DELETE FROM message WHERE id=" . $_GET['msid'], $conn);
 					echo 'Your game was scheduled!';
 				}
 				else{

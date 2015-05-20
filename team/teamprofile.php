@@ -43,10 +43,12 @@
 			Pending Requests:
 			<div class="row-fluid">
 				<div class="span4 offset2 bg-danger">
-					<?php
-						//Get and display all messages
-						displayMessages(getMessages($_SESSION['teamId'], $conn), $conn);
-					?>
+					<div id="messages">
+						<?php
+							//Get and display all messages
+							displayChallengeMessages(getMessages($_SESSION['teamId'], $conn));
+						?>
+					</div>
 				</div>
 			</div>
 		</div>

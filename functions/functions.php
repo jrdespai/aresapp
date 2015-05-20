@@ -1,12 +1,14 @@
 <?php
 
+	function runQuery($strQuery, $conn){
+		$query = $strQuery;
+		return mysqli_query($conn, $query);
+	}
+
 	//Get data for all pending game requests for the teamId
 	function getMessages($teamId, $conn){
 		
-		//The current team would be team2 in the confirmQueue table, so we only need to query where teamId (opponent ID) is in the team1 field
-		$query = "SELECT * FROM confirmQueue WHERE team1 = " . $teamId . ";";
-		
-		$result = mysqli_query($conn, $query);	
+		$result = runQuery("SELECT id, body FROM message WHERE teamId = " . $teamId . ";", $conn);
 		
 		$rows = array();
 		
@@ -21,10 +23,15 @@
 	}
 	
 	//Add each message passed in the $rows array as a div
-	function displayMessages($rows, $conn){
+	function displayChallengeMessages($rows){//, $conn){
 	
 		foreach($rows as $row){
-			echo '<div id="message">' . getTeamName($row['team2'], $conn) . ' Has challenged you to play!<button class="btn"><a href="schedule.php?t1=' . $row['team1'] . '&t2=' . $row['team2'] . '">Accept Challenge</a></button></div>';
+			$body = $row['body'];;
+			$body = str_replace("%msid%", $row['id'], $body);
+			echo $body;
+			//$end = substr($body, 5);
+			//echo "<div data-msid=" . $row['id'] . " " . $end;
+			
 		}
 	}
 	
