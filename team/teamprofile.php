@@ -38,20 +38,6 @@
 				<button class="btn"><a href="confirmleave.php?tid=<?php echo $teamData['teamName']; ?>">Leave Team</a></button>
 				<button class="btn"><a href="random.php">Schedule Random Game</a></button>
 		</div>
-
-		<!--<div class="container border-box">
-			Pending Requests:
-			<div class="row-fluid">
-				<div class="span4 offset2 bg-danger">
-					<div id="messages">
-						<?php
-							//Get and display all messages
-							displayChallengeMessages(getMessages($_SESSION['teamId'], $conn));
-						?>
-					</div>
-				</div>
-			</div>
-		</div>-->
 		
 		<table class="table table-hover">
 			<tr>

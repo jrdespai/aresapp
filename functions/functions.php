@@ -1,5 +1,10 @@
 <?php
 
+	function getTeamCaptain($teamId, $conn){
+		return runQuery("SELECT captainId FROM team WHERE id = " . $teamId);
+	}
+
+	//Run a Sql Query
 	function runQuery($strQuery, $conn){
 		$query = $strQuery;
 		return mysqli_query($conn, $query);

@@ -39,6 +39,7 @@
 ?>
 			</select>
 			<button type="submit" class="btn">Request to Join</button>
+			<a href="registerteam.php"><button type="button" class="btn">Create New Team</button></a>
 		</div>
 	</form>
 

@@ -31,7 +31,7 @@
 	
 	echo $captain;
 	
-	$query = "INSERT INTO team(teamName, teamCaptain,  teamSport, teamCity, teamState) VALUES ('" . $name . "', '" . $captain . "', '" . $sport . "', '" . $city . "', '" . $state . "')";
+	$query = "INSERT INTO team(teamName, teamCaptain,  teamSport, teamCity, teamState) VALUES ('" . $name . "', '" . $_SESSION['playerId'] . "', '" . $sport . "', '" . $city . "', '" . $state . "')";
 	
 	$result = mysqli_query($conn, $query);
 	
