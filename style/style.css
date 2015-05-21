@@ -28,3 +28,20 @@ body {
 	padding-bottom:	15px;
 }
 
+#messages{
+	height:		100px;
+	overflow:	scroll;
+}
+
+.msgbtn{
+	display:	table-cell;
+	float:		right;
+}
+
+.chmessage{
+	border:				1px solid;
+	/*height:		40px;*/
+	display:			table;
+	width:				98%;
+	margin:				5px;
+}

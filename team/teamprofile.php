@@ -39,7 +39,7 @@
 				<button class="btn"><a href="random.php">Schedule Random Game</a></button>
 		</div>
 
-		<div class="container border-box">
+		<!--<div class="container border-box">
 			Pending Requests:
 			<div class="row-fluid">
 				<div class="span4 offset2 bg-danger">
@@ -51,7 +51,17 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
+		
+		<table class="table table-hover">
+			<tr>
+				<th>Pending Requests:</th>
+			</tr>
+			<?php
+							//Get and display all messages
+							displayChallengeMessages(getMessages($_SESSION['teamId'], $conn));
+						?>
+		</table>
 		
 		<div class="container">
 			<div class="h2">
