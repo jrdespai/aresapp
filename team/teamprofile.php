@@ -45,7 +45,7 @@
 			</tr>
 			<?php
 							//Get and display all messages
-							displayChallengeMessages(getMessages($_SESSION['teamId'], $conn));
+							displayChallengeMessages(getTeamMessages($_SESSION['teamId'], $conn));
 						?>
 		</table>
 		

@@ -1,7 +1,21 @@
 <?php
 
-	function getTeamCaptain($teamId, $conn){
-		return runQuery("SELECT captainId FROM team WHERE id = " . $teamId);
+	
+	
+	//Return playerName of player
+	function getPlayerName($playerId, $conn){
+		$result = runQuery("SELECT playerName FROM player WHERE playerId = " . $playerId);
+		$row = mysqli_fetch_array($result);
+		$result->close();
+		return $row['playerName'];
+	}
+
+	//Return playerId of team captain
+	function getTeamCaptainID($teamId, $conn){
+		$result = runQuery("SELECT teamCaptain FROM team WHERE teamId = " . $teamId, $conn);
+		$row = mysqli_fetch_array($result);
+		$result->close();
+		return $row['teamCaptain'];
 	}
 
 	//Run a Sql Query
@@ -11,9 +25,45 @@
 	}
 
 	//Get data for all pending game requests for the teamId
-	function getMessages($teamId, $conn){
+	function getTeamMessages($teamId, $conn){
 		
-		$result = runQuery("SELECT id, body FROM message WHERE teamId = " . $teamId . ";", $conn);
+		return returnResultsArray("SELECT id, body FROM message WHERE teamId = " . $teamId . ";", $conn);
+		
+	}
+	
+	//Get messages for a player
+	function getPlayerMessages($playerId, $conn){
+		
+		return returnResultsArray("SELECT id, body FROM message WHERE playerId = " . $playerId . ";", $conn);
+		
+	}
+	
+	/*function displayPlayerMessages($playerId, $conn){
+		$query = "SELECT teamId FROM team WHERE teamCaptain IN (" . getTEamsforCaptain($playerId, $conn . ")";
+	}*/
+	
+	//Returns a comma separated list of teams that the player is a captain of
+	function getTeamsForCaptain($playerId, $conn){
+		$query = "SELECT teamId FROM team WHERE teamCaptain = " . $playerId;
+		$teams = returnResultsArray($query, $conn);
+		return implode(',', getSingleArray($teams, "teamId"));
+	}
+	
+	//Pass a multi-dimensional array and receive a single dimensional array
+	function getSingleArray($array, $colName){
+		
+		$retArray = array();
+		
+		foreach($array as $row){
+			$retArray[] = $row[$colName];
+		}
+		
+		return $retArray;
+	}
+	
+	//Get multiple lines of results and return them in an array
+	function returnResultsArray($query, $conn){
+		$result = runQuery($query, $conn);
 		
 		$rows = array();
 		
@@ -24,7 +74,6 @@
 		$result->close();
 		
 		return $rows;
-		
 	}
 	
 	//Add each message passed in the $rows array as a div

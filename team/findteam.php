@@ -7,6 +7,7 @@
 	include('../connect.php');
 	include('../header_sub.php');
 	include('../navbar_sub.php');
+	include('../functions/functions.php');
 
 ?>
 	<form role="form" method="post" action="adduserteam.php">
@@ -36,11 +37,14 @@
 		
 		//Close DB connection
 		mysqli_close($conn);
+		
 ?>
 			</select>
 			<button type="submit" class="btn">Request to Join</button>
 			<a href="registerteam.php"><button type="button" class="btn">Create New Team</button></a>
 		</div>
 	</form>
-
+<?php
+	echo $test;
+?>
 </html>

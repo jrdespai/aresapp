@@ -17,8 +17,10 @@
 	//Delete the team to be played from the gameQueue table
 	$sqlResult = runQuery("DELETE FROM gameQueue WHERE teamID = '" . $_GET['tid'] . "';", $conn);
 		
+	$teamCaptain = getTeamCaptainID($_GET['tid'], $conn);
+	
 	//Insert a record into the message table
-	$sqlResult = runQuery("INSERT INTO message (body, teamId) VALUES ('<tr><td>" . mysqli_real_escape_string($conn, getTeamName($_SESSION['teamId'], $conn)) . " Has challenged you to play!</td><td><button class=\"btn msgbtn\"><a href=\"schedule.php?t1=" . $_GET['tid'] . "&t2=" . $_SESSION['teamId'] . "&msid=%msid%\">Accept Challenge</a></button></td></tr>', '" . $_GET['tid'] . "')", $conn);
+	$sqlResult = runQuery("INSERT INTO message (body, playerId, teamId) VALUES ('<tr><td>" . mysqli_real_escape_string($conn, getTeamName($_SESSION['teamId'], $conn)) . " Has challenged you to play!</td><td><button class=\"btn msgbtn\"><a href=\"schedule.php?t1=" . $_GET['tid'] . "&t2=" . $_SESSION['teamId'] . "&msid=%msid%\">Accept Challenge</a></button></td></tr>', '" . $teamCaptain . "', '" . $_GET['tid'] . "')", $conn);
 	mysqli_close($conn);
 	
 ?>

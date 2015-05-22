@@ -2,8 +2,8 @@
 
 
 <?php
-
 	include('../validate_session_sub.php');
+	include('../functions/functions.php');
 
 	$playerId = $_SESSION["playerId"];
 
@@ -15,9 +15,6 @@
 	
 	$playerData = mysqli_fetch_array($result);
 	
-	//Close DB connection
-	mysqli_close($conn);
-	
 	//Include the HTML header and navbar
 	include('../header_sub.php');
 	include('../navbar_sub.php');
@@ -25,7 +22,18 @@
   <body>
 	
 		<div class="container-fluid bg-warning">
-			<div class="row">
+	
+		<table class="table table-hover">
+			<tr>
+				<th>Pending Messages:</th>
+			</tr>
+			<?php
+							//Get and display all messages
+							displayChallengeMessages(getPlayerMessages($playerId, $conn));
+						?>
+		</table>
+	
+		<div class="row">
 				<div class="col-sm-5">
 					<p>Player Name: 
 						<?php
