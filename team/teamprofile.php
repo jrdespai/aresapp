@@ -39,17 +39,19 @@
 		<div class="container-fluid bg-warning">
 				<button class="btn"><a href="confirmleave.php?tid=<?php echo $teamData['teamName']; ?>">Leave Team</a></button>
 				<button class="btn"><a href="random.php">Schedule Random Game</a></button>
+				<p class="h3">Messages:</p>
+			
+				
+				<div id="messages">
+					<table class="table table-hover">
+						<?php
+										//Get and display all messages
+										displayChallengeMessages(getTeamMessages($_SESSION['teamId'], $conn));
+									?>
+					</table>
+				</div>
+			
 		</div>
-		
-		<table class="table table-hover">
-			<tr>
-				<th>Pending Requests:</th>
-			</tr>
-			<?php
-							//Get and display all messages
-							displayChallengeMessages(getTeamMessages($_SESSION['teamId'], $conn));
-						?>
-		</table>
 		
 		<div class="container">
 			<div class="h2">

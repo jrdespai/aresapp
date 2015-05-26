@@ -25,24 +25,25 @@
 	
 		<div class="container-fluid bg-warning">
 	
-		<table class="table table-hover">
-			<tr>
-				<th>Pending Messages:</th>
-			</tr>
-			<?php
-							//Get and display all messages
-							displayChallengeMessages(getPlayerMessages($playerId, $conn));
-						?>
-		</table>
+			<p class="h3">Messages:</p>
 	
-		<div class="row">
-				<div class="col-sm-5">
-					<p>Player Name: 
-						<?php
-							echo $playerData['playerName'];
-						?>
-						</p>
-				</div>
+			<div id="messages">
+				<table class="table table-hover">
+					<?php
+									//Get and display all messages
+									displayChallengeMessages(getPlayerMessages($playerId, $conn));
+								?>
+				</table>
+			</div>
+		
+			<div class="row">
+					<div class="col-sm-5">
+						<p>Player Name: 
+							<?php
+								echo $playerData['playerName'];
+							?>
+							</p>
+					</div>
 			</div>
 
 		

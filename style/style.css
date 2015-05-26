@@ -34,8 +34,10 @@ body {
 }
 
 #messages{
-	height:		100px;
-	overflow:	scroll;
+	height:		200px;
+	overflow-y:	scroll;
+	border:		1px solid;
+	background-color:	lightblue;
 }
 
 .msgbtn{
