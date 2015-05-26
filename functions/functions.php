@@ -1,6 +1,28 @@
 <?php
 
-	
+	//Build and return the prefix (ex-../../ string) to return to the bluechip folder
+	//Referenced:	http://www.tizag.com/phpT/php-string-strpos.php
+	function getFilePrefix($location){
+		
+		//Find bluechip string location
+		$startLocation = strpos($location, 'bluechip');
+		
+		//counter variable for number of subfolders
+		$intFolders = 0;
+		
+		//string variable to hold subfolder prefix
+		$strPrefix = "";
+		
+		while($startLocation = strpos($location, "\\", $startLocation + 1)){
+
+			if(++$intFolders > 1){
+				$strPrefix .= "../";
+			}			
+		}
+		
+		return $strPrefix;
+		
+	}
 	
 	//Return playerName of player
 	function getPlayerName($playerId, $conn){
