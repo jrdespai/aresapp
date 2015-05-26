@@ -4,16 +4,13 @@
 <?php
 	session_name("user");
 	session_start("user");
-	
-//I don't think this line is necessary - JRD 4/24/15
-	//include('../header.php');
 ?>
 
   <body>
   
 <?php
-		//server connect
-		include('../connect.php');
+	//server connect
+	include('../connect.php');
 	
 	
 	$name = $_POST['name'];

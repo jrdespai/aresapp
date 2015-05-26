@@ -5,9 +5,11 @@
 	//Validate that the user is logged in
 	include('../validate_session_sub.php');
 	
+	//Set location variable for navbar use
+	$location = __FILE__;
+	
 	//Include the HTML header and navbar
-	include('../header_sub.php');
-	include('../navbar_sub.php');
+	include('../navbar.php');
 ?>
 
   <body>

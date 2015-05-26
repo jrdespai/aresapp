@@ -20,8 +20,10 @@
 	//Close DB connection
 	mysqli_close($conn);
 	
+	//Set location variable for navbar use
+	$location = __FILE__;
+	
 	//Include the HTML header and navbar
-	include('header.php');
 	include('navbar.php');
 
 ?>

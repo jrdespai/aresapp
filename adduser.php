@@ -1,7 +1,5 @@
 <?php
 
-//I don't think you need an HTML header here - JRD 4/24/15
-	//include('header.php');
 	include('connect.php');
 	include('encrypt.php');
 	

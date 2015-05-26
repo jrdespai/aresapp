@@ -2,12 +2,14 @@
 
 <?php
 
+	//Set location variable for navbar use
+	$location = __FILE__;
+
 	//Verify session, get DB info, add HTML page header, and add navbar
 	include('../validate_session_sub.php');
 	include('../connect.php');
-	include('../header_sub.php');
-	include('../navbar_sub.php');
-	include('../functions/functions.php');
+	include('../navbar.php');
+	include_once('../functions/functions.php');
 
 ?>
 	<form role="form" method="post" action="adduserteam.php">
@@ -44,7 +46,4 @@
 			<a href="registerteam.php"><button type="button" class="btn">Create New Team</button></a>
 		</div>
 	</form>
-<?php
-	echo $test;
-?>
 </html>

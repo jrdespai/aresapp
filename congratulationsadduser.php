@@ -2,6 +2,9 @@
 
 
 <?php
+
+	//Set location variable for navbar use
+	$location = __FILE__;
 	
 	//Validate that user session is active and join
 	include('validate_session.php');
@@ -19,7 +22,6 @@
 	//Close DB connection
 	mysqli_close($conn);
 	
-	include('header.php');
 	include('navbar.php');
 ?>
 

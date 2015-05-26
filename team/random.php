@@ -3,7 +3,7 @@
 	//Connect to DB and session
 	include('../validate_session_sub.php');
 	include('../connect.php');
-	include('../functions/functions.php');
+	include_once('../functions/functions.php');
 
 	checkTeam($_SESSION['teamId'], $conn);
 	
