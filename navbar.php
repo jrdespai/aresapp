@@ -55,35 +55,37 @@
 			
 			<nav id="bcnavigation" class="navbar navbar-fixed-top">
 				<div class="container-fluid">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
+						
+						<a class="navbar-brand" href="' . $mainLink . '" /><img id="bclogo" src="' . $logoLink . '" height="40" width = "100" /></a>
+						
+						<button id="toggle-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".mainNav">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
-							</button>
-							<a class="navbar-brand" href="' . $mainLink . '" /><img id="bclogo" src="' . $logoLink . '" height="40" width = "100" /></a>
-						</div>
-						<div>
-							<ul class="nav navbar-nav" id="mainNav">
-								<li><a id="white" href="' . $welcomeLink . '">Home</a></li>
+						</button>
+							
+						
+						<div class="collapse navbar-collapse navbar-header mainNav">
+							<ul class="nav navbar-nav">
+								<li><a class="white" href="' . $welcomeLink . '">Home</a></li>
 								<li class="dropdown">
-									<a class="dropdown-toggle" id="white" data-toggle="dropdown" href="#">
+									<a class="dropdown-toggle white" data-toggle="dropdown" href="#">
 									My Profile
-									<span class="glyphicon glyphicon-plus"></span></a>
+									<span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="' . $playerProfileLink . '">My Profile</a></li>
 									</ul>									
 								</li>
 								<li class="dropdown">
-									<a class="dropdown-toggle" id="white" data-toggle="dropdown" href="#">
+									<a class="dropdown-toggle white" data-toggle="dropdown" href="#">
 									My Teams
-									<span class="glyphicon glyphicon-plus"></span></a>
+									<span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="' . $myTeamsLink . '">My Teams</a></li>
 										<li><a href="' . $findTeamLink . '">Join a Team</a></li>
 									</ul>	
 								</li>
-								<li><a id="white" href="' . $logoutLink . '">Logout</a></li>
+								<li><a class="white" href="' . $logoutLink . '">Logout</a></li>
 							</ul>
 						</div>
 				</div>
