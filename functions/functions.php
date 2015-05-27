@@ -1,5 +1,16 @@
 <?php
 
+	//Delete a message from the message table
+	function deleteMessage($mid, $conn){
+		$sqlResult = runQuery("DELETE FROM message WHERE id = '" . $mid . "';", $conn);
+		return $sqlResult;
+	}
+
+	//Insert a new message into the message table
+	function insertMessage($body, $linkString, $buttonText, $player, $team, $conn){
+		$sqlResult = runQuery("INSERT INTO message (body, playerId, teamId) VALUES ('<tr><td>" . $body . "</td><td><button class=\"btn msgbtn\"><a href=\"" . $linkString . "&msid=%msid%\">" . $buttonText . "</a></button></td></tr>', '" . $player . "', '" . $team . "')", $conn);
+	}
+	
 	//Build and return the prefix (ex-../../ string) to return to the bluechip folder
 	//Referenced:	http://www.tizag.com/phpT/php-string-strpos.php
 	function getFilePrefix($location){
@@ -26,7 +37,7 @@
 	
 	//Return playerName of player
 	function getPlayerName($playerId, $conn){
-		$result = runQuery("SELECT playerName FROM player WHERE playerId = " . $playerId);
+		$result = runQuery("SELECT playerName FROM player WHERE playerId = " . $playerId, $conn);
 		$row = mysqli_fetch_array($result);
 		$result->close();
 		return $row['playerName'];
@@ -59,10 +70,6 @@
 		return returnResultsArray("SELECT id, body FROM message WHERE playerId = " . $playerId . ";", $conn);
 		
 	}
-	
-	/*function displayPlayerMessages($playerId, $conn){
-		$query = "SELECT teamId FROM team WHERE teamCaptain IN (" . getTEamsforCaptain($playerId, $conn . ")";
-	}*/
 	
 	//Returns a comma separated list of teams that the player is a captain of
 	function getTeamsForCaptain($playerId, $conn){

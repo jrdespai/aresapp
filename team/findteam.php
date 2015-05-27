@@ -12,7 +12,7 @@
 	include_once('../functions/functions.php');
 
 ?>
-	<form role="form" method="post" action="adduserteam.php">
+	<form role="form" method="post" action="sendplayerrequest.php">
 		<div class="form-group">
 			<label for="teams">Teams:</label>
 			<select class="form-control" id="teams" name="team" size="5">

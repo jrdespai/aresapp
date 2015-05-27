@@ -10,14 +10,9 @@
 	$mid = $_GET['msid'];
 	
 	//Insert a new row into teamPlayer with the current user's player id and the team id from the team selected
-	$query = 'INSERT INTO teamplayer (teamId, playerId) VALUES(' . $team . ', ' . $player . ')';
+	insertMessage('Sorry, your request to join team ' . getTeamName($team, $conn) . ' was declined', getFilePrefix(__FILE__) . 'messages/deletemessage.php?msid=%msid%', 'Delete', $player, '', $conn);
+	deleteMessage($mid, $conn);
 	mysqli_query($conn, $query);
-	
-	//Delete Message
-	$result = deleteMessage($mid, $conn);
-	
-	//Create acceptance message for user
-	insertMessage('Your request to join ' . getTeamName($team, $conn) . ' has been accepted!', getFilePrefix(__FILE__) . 'messages/deletemessage.php?msid=%msid%', 'Delete', $player, '', $conn);
 	
 	//Close DB connection
 	mysqli_close($conn);
