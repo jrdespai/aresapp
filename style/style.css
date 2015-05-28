@@ -82,17 +82,17 @@ body {
 
 #welcomebody{
 	background-image:	url("../images/background.jpg");
-	background-height:	100%;
+	background-size:	100%;
 }
 
 #mainNav > ul > li{
 	margin-right:	2.25em;
 	margin-left:	2.25em;
+	font-size:		1.5em;
 }
 
 .btnwelcome{
 	width:			100%;
-	/*height:			5em;*/
 	margin-top:		1%;
 	font-size:		3em;
 }
