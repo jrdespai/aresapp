@@ -1,6 +1,5 @@
 body {
 	padding-top: 			70px; 
-	
 }
 #image {
 	width:					400px;
@@ -26,6 +25,10 @@ body {
 
 .white{
 	color:		white;
+}
+
+.blue{
+	background-color:	darkblue;
 }
 
 #bclogo{
@@ -59,4 +62,37 @@ body {
 
 #toggle-button:hover{
 	background-color:	grey;
+}
+
+#welcomebanner{
+	height:			200px;
+	text-align:		center;
+	font-size:		300%;
+	color:			white;
+	font-weight:	bold;
+	background:		rgba(0,0,155,.5);
+	background-position:	center;
+	margin-top:		2%;
+}
+
+#nametext{
+	font-style: italic;
+	opacity:		1;
+}
+
+#welcomebody{
+	background-image:	url("../images/background.jpg");
+	background-height:	100%;
+}
+
+#mainNav > ul > li{
+	margin-right:	2.25em;
+	margin-left:	2.25em;
+}
+
+.btnwelcome{
+	width:			100%;
+	/*height:			5em;*/
+	margin-top:		1%;
+	font-size:		3em;
 }

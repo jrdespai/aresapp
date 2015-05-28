@@ -28,13 +28,23 @@
 
 ?>
 
- <body>
-		<div class="container-fluid">
-				<?php
-					echo '<p class="jumbotron">Welcome back ' . $playerData['playerName'] . '</p>';
-				?>
-				<button class="btn"><a href="player/playerprofile.php">My Profile</a></button>
-				<button class="btn"><a href="team/myteams.php">My Teams</a></button>
+ <body id="welcomebody">
+		<div class="container">
+				<div class="row">
+					<div class="span6 offset3">
+						<?php
+							echo '<p id="welcomebanner" class="jumbotron blue">Welcome back<br><span id="nametext">' . $playerData['playerName'] . '</span></p>';
+						?>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<a href="player/playerprofile.php"><button class="btn btnwelcome">My Profile</button></a>
+						</div>
+						<div class="col-md-6">
+							<a href="team/myteams.php"><button class="btn btnwelcome">My Teams</button></a>
+						</div>
+					</div>
+				</div>
 		</div>
 
 

@@ -65,7 +65,7 @@
 						</button>
 							
 						
-						<div class="collapse navbar-collapse navbar-header mainNav">
+						<div id="mainNav" class="collapse navbar-collapse navbar-header mainNav">
 							<ul class="nav navbar-nav">
 								<li><a class="white" href="' . $welcomeLink . '">Home</a></li>
 								<li class="dropdown">
