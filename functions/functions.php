@@ -1,5 +1,32 @@
 <?php
 
+	//Purpose:			Insert a modal dialog into the page
+	//Referenced:		https://www.youtube.com/watch?v=7YJUFaZMS8Q
+	//Parameters:		$id		-	The id of the modal to create (this is referenced in the href of the link to the modal)
+	//					$header	-	The header/title text of the modal box/message
+	//					$body	-	The body text of the modal box/message
+	//Notes:			There must be a link that refernces the id passed, preceded by a '#' character, as well as a data-toggle="modal" attribute in the link, see below:
+	//							********** *******************
+	//					<a href="#contact" data-toggle="modal">Click</a>
+	function createModal($id, $header, $body){
+		echo '
+	<div class="modal fade" id="' . $id . '" role="dialog">
+		<div class = "modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4>' . $header . '</h4>
+				</div>
+				<div class="modal-body">
+					<p>' . $body . '</p>
+				</div>
+				<div class="modal-footer">
+					<a class="btn btn-default" data-dismiss="modal">Close</a>
+				</div>
+			</div>
+		</div>
+	</div>';
+	}
+
 	//Delete a message from the message table
 	function deleteMessage($mid, $conn){
 		$sqlResult = runQuery("DELETE FROM message WHERE id = '" . $mid . "';", $conn);
