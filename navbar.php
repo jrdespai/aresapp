@@ -70,15 +70,16 @@
 								<li><a class="white" href="' . $welcomeLink . '">Home</a></li>
 								<li class="dropdown">
 									<a class="dropdown-toggle white" data-toggle="dropdown" href="#">
-									My Profile
+									Players
 									<span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="' . $playerProfileLink . '">My Profile</a></li>
+										<li><a href="' . $playerProfileLink . '">Find Players</a></li>
 									</ul>									
 								</li>
 								<li class="dropdown">
 									<a class="dropdown-toggle white" data-toggle="dropdown" href="#">
-									My Teams
+									Teams
 									<span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="' . $myTeamsLink . '">My Teams</a></li>
