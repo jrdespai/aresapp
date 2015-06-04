@@ -24,15 +24,34 @@
   <body>
 	
 		<div class="container-fluid bg-warning">
-	
+			<div class="container">
+				<div class="row">
+					<div  class="col-sm-6 col-xs-12">
+						<div class="panel">
+							<div class="panel-heading">
+								<p id="playerprofilepic">
+									<img src="../images/register.jpg" alt="Player Profile" /> 
+								</p>
+							</div>
+							<div class="panel-body">
+								<p>Player Name: 
+							<?php
+								echo $playerData['playerName'];
+							?>
+							</p>
+							</div>
+						</div>
+					<div>
+				</div>
+			</div>
 			<p class="h3">Messages:</p>
 	
 			<div id="messages">
 				<table class="table table-hover">
 					<?php
-									//Get and display all messages
-									displayChallengeMessages(getPlayerMessages($playerId, $conn));
-								?>
+						//Get and display all messages
+						displayChallengeMessages(getPlayerMessages($playerId, $conn));
+					?>
 				</table>
 			</div>
 		

@@ -12,21 +12,17 @@
 	//Include the HTML header and navbar
 	include('navbar.php');
 ?>
-<body>
+<body id="registerbody">
 
-	<div class="container">
+	
+	<div id="registercontainer" class="container">
 
-	<form role="form" action="adduser.php" method="post">
+	<form id="signintext" role="form" action="adduser.php" method="post">
 			
 			<div class="form-group">
 				<label for="name">Full Name:</label>
 				<input type="text" class="form-control" id="name" name="name" required>
 				
-			</div>
-			
-			<div class="form-group">
-				<label for="email">Email Address:</label>
-				<input type="email" class="form-control" id="email" name="email" required>
 			</div>
 			
 			<div class="form-group">
@@ -45,6 +41,11 @@
 				<input type="password" class="form-control" id="confirmpassword" name="confirmpassword" onblur="checkPassword()" required>
 			</div>
 			
+			<div class="form-group">
+				<label for="email">Email Address:</label>
+				<input type="email" class="form-control" id="email" name="email" required>
+			</div>
+
 			<div class="form-group">
 				<label for="city">City:</label>
 				<input type="text" class="form-control" id="city" name="city" required>
@@ -65,6 +66,7 @@
 		   </form>
 
 		   </div>
+		
 		   
   </body>
   

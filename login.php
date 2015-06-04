@@ -13,19 +13,23 @@
 	include('navbar.php');
 ?>
 
-  <body>
+  <body id="signinbody">
+  <div class="container">
 <?php
 	echo'	<form role="form" action="verify.php" method="post">
-				<div class="form-group">
+				<div id="signintext" class="form-group">
 					<label for="username">Username:</label>
 					<input type="text" class="form-control" id="username" name="username">
 				</div>
-				<div class="form-group">
+				<div id="signintext" class="form-group">
 					<label for="password">Password:</label>
 					<input type="password" class="form-control" id="password" name="password">
 				</div>
 				<button type="submit" class="btn btn-default">Login</button>
 			</form>'
 ?>
+					
+		</div>
+
 </body>
 </html>
