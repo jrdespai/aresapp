@@ -26,22 +26,33 @@
 		<div class="container-fluid bg-warning">
 			<div class="container">
 				<div class="row">
-					<div  class="col-sm-6 col-xs-12">
-						<div class="panel">
+					<div  class="col-sm-3 col-xs-6">
+						<div id="playerprofilepic" class="panel">
 							<div class="panel-heading">
-								<p id="playerprofilepic">
+								<p>
 									<img src="../images/register.jpg" alt="Player Profile" /> 
 								</p>
 							</div>
-							<div class="panel-body">
-								<p>Player Name: 
+							<div class="panel-body">	
+							<button class="btn"><a href="../team/myteams.php">My Teams</a></button>
+							<button class="btn"><a href="../team/findteam.php">Join a Team</a></button>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-6">
+						<p id="usernameprofile"> 
 							<?php
 								echo $playerData['playerName'];
 							?>
-							</p>
-							</div>
-						</div>
-					<div>
+						</p>
+						<p> 
+							<?php
+								echo $playerData['playerCity'];
+								echo $playerData['playerState'];
+							?>
+						</p>
+					
+					</div>
 				</div>
 			</div>
 			<p class="h3">Messages:</p>
@@ -108,8 +119,7 @@
 			</div>
 		</div>
 		
-		<button class="btn"><a href="../team/myteams.php">My Teams</a></button>
-		<button class="btn"><a href="../team/findteam.php">Join a Team</a></button>
+		
 		
   </body>
   
